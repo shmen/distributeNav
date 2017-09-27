@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>系统登录</title>
+    <link rel="stylesheet" href="./css/login.css">
+</head>
+
+<body>
+
+    <div class="content">
+        <div class="clearfix nav">
+            <div class="nav-item approval">
+                <div class="center-btn ">
+                    <div></div>
+                </div>
+                <div class="nav-ring"></div>
+                <div class="btn">
+                    <div class="text-wrapper">
+                        <div class="text-align">盘山县</div>
+                    </div>
+                </div>
+                <div class="btn">
+                    <div class="text-wrapper">
+                        <div class="text-align">双台子区</div>
+                    </div>
+                </div>
+                <div class="btn">
+                    <div class="text-wrapper">
+                        <div class="text-align">大洼区</div>
+                    </div>
+                </div>
+                <div class="btn">
+                    <div class="text-wrapper">
+                        <div class="text-align">辽河口<br/>生态
+                            <br/>经济区</div>
+                    </div>
+                </div>
+                <div class="btn">
+                    <div class="text-wrapper">
+                        <div class="text-align">辽东湾
+                            <br/>新区</div>
+                    </div>
+                </div>
+                <div class="btn">
+                    <div class="text-wrapper">
+                        <div class="text-align">兴隆台区</div>
+                    </div>
+                </div>
+            </div>
+            <div class="nav-item pending">
+                <div class="center-btn">
+                    <div></div>
+                </div>
+                <div class="nav-ring"></div>
+                <div class="btn">
+                    <div class="text-wrapper">
+                        <div class="text-align">盘山县</div>
+                    </div>
+                </div>
+                <div class="btn">
+                    <div class="text-wrapper">
+                        <div class="text-align">双台子区</div>
+                    </div>
+                </div>
+                <div class="btn">
+                    <div class="text-wrapper">
+                        <div class="text-align">大洼区</div>
+                    </div>
+                </div>
+                <div class="btn">
+                    <div class="text-wrapper">
+                        <div class="text-align">辽河口<br/>生态
+                            <br/>经济区</div>
+                    </div>
+                </div>
+                <div class="btn">
+                    <div class="text-wrapper">
+                        <div class="text-align">辽东湾
+                            <br/>新区</div>
+                    </div>
+                </div>
+                <div class="btn">
+                    <div class="text-wrapper">
+                        <div class="text-align">兴隆台区</div>
+                    </div>
+                </div>
+            </div>
+            <div class="nav-item supervision">
+                <div class="center-btn">
+                    <div></div>
+                </div>
+                <div class="nav-ring"></div>
+                <div class="btn">
+                    <div class="text-wrapper">
+                        <div class="text-align">盘山县</div>
+                    </div>
+                </div>
+                <div class="btn">
+                    <div class="text-wrapper">
+                        <div class="text-align">双台子区</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="./js/jquery-1.11.0.min.js"></script>
+    <script src="./js/distributeNav.js"></script>
+    <script>
+        $('.approval').distributeNav({
+            item: '.btn',
+            center: '.center-btn',
+            ring: '.nav-ring',
+            rotate: 0,
+            trigger: 'click',
+            itemCallback: function(a) {
+                console.log(a)
+            },
+            openCallback: function(visible) {
+                console.log(visible)
+            },
+            closeCallback: function(visible) {
+                console.log(visible)
+            }
+        });
+
+        $('.pending').distributeNav({
+            item: '.btn',
+            center: '.center-btn',
+            ring: '.nav-ring',
+            rotate: 30,
+            isHide: true,
+            trigger: 'hover'
+        });
+
+        $('.supervision').distributeNav({
+            item: '.btn',
+            center: '.center-btn',
+            ring: '.nav-ring',
+            rotate: 90,
+            isHide: true,
+            itemCallback: function(a) {
+                console.log(a)
+            },
+            openCallback: function(visible) {
+                console.log(visible)
+            },
+            closeCallback: function(visible) {
+                console.log(visible)
+            }
+        })
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,233 @@
+html,
+body {
+    height: 100%;
+    background: #016dba;
+    overflow: hidden
+}
+
+.background {
+    width: 100%;
+    overflow: hidden;
+    position: absolute;
+    left: 0;
+    bottom: 0
+}
+
+.background img {
+    width: 100%;
+    vertical-align: bottom
+}
+
+.content {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    z-index: 2;
+    overflow: hidden
+}
+
+.title {
+    text-align: center;
+    font-size: 54px;
+    font-weight: bold;
+    color: #fff;
+    text-shadow: 0 2px 2px #104568;
+    margin-top: 104px;
+}
+
+.title img {
+    vertical-align: middle;
+    margin-top: -4px;
+}
+
+.nav {
+    width: 1012px;
+    margin: 76px auto 0;
+    padding: 20px 0;
+}
+
+.nav-item {
+    width: 284px;
+    height: 284px;
+    position: relative;
+    float: left;
+    margin-left: 40px;
+}
+
+.nav-item .center-btn {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    margin: -75px 0 0 -75px;
+    z-index: 1
+}
+
+.nav-item .center-btn::after,
+.nav-item .center-btn::before {
+    content: '';
+    transition: all 0.3s ease-in-out;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+}
+
+.nav-item .center-btn:hover::after,
+.nav-item .center-btn:hover::before {
+    top: 0;
+    left: 0
+}
+
+.nav-item .center-btn>div {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    z-index: 3;
+    transition: all 0.3s ease-in-out;
+    cursor: pointer;
+}
+
+.nav-item .btn {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    position: absolute;
+    transition: all 0.3s ease-in-out;
+    z-index: 0;
+    display: none;
+    cursor: pointer;
+}
+
+.text-wrapper {
+    width: 100%;
+    height: 100%;
+    display: table;
+    text-align: center
+}
+
+.text-align {
+    vertical-align: middle;
+    display: table-cell;
+    color: #fff
+}
+
+.nav-ring {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    transition: all 0.3s ease-in-out;
+    background: url('../images/nav_ring.png') no-repeat;
+    display: none
+}
+
+.approval .center-btn>div {
+    background: url('../images/center_btn1.png') no-repeat;
+}
+
+.approval .center-btn>div:hover {
+    background: url('../images/center_btn1_hover.png') no-repeat;
+}
+
+.approval .btn {
+    background: url('../images/btn_bg1.png') no-repeat center;
+}
+
+.approval .center-btn::after {
+    top: 6px;
+    left: -16px;
+    background: rgba(83, 138, 253, 0.2);
+}
+
+.approval .center-btn::before {
+    position: absolute;
+    top: -20px;
+    left: 6px;
+    background: rgba(83, 138, 253, 0.2);
+}
+
+.pending .center-btn>div {
+    background: url('../images/center_btn2.png') no-repeat
+}
+
+.pending .btn {
+    background: url('../images/btn_bg2.png') no-repeat
+}
+
+.pending .nav-ring {
+    background: url('../images/nav_ring2.png') no-repeat center
+}
+
+.pending .center-btn::after {
+    top: -4px;
+    left: -10px;
+    background: rgba(255, 166, 79, 0.2);
+}
+
+.pending .center-btn::before {
+    top: 12px;
+    left: 2px;
+    background: rgba(255, 166, 79, 0.2);
+}
+
+.pending .center-btn>div:hover {
+    background: url('../images/center_btn2_hover.png') no-repeat;
+}
+
+.supervision .center-btn>div {
+    background: url('../images/center_btn3.png') no-repeat
+}
+
+.supervision .btn {
+    background: url('../images/btn_bg3.png') no-repeat
+}
+
+.supervision .nav-ring {
+    background: url('../images/nav_ring3.png') no-repeat center
+}
+
+.supervision .center-btn::after {
+    top: -6px;
+    left: -20px;
+    background: rgba(0, 167, 234, 0.2);
+}
+
+.supervision .center-btn::before {
+    top: 2px;
+    left: 20px;
+    background: rgba(0, 167, 234, 0.2);
+}
+
+.supervision .center-btn>div:hover {
+    background: url('../images/center_btn3_hover.png') no-repeat;
+}
+
+.footer {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    overflow: hidden;
+    text-align: center;
+    z-index: 100
+}
+
+.footer span {
+    color: #fff;
+    background: rgba(0, 0, 0, 0.4);
+    padding: 0 20px;
+    line-height: 30px;
+    display: inline-block;
+    *display: inline;
+    zoom: 1;
+    border-radius: 10px;
+    margin-bottom: 46px;
+}
+
+.footer span a {
+    margin: 0 10px;
+}
