@@ -7,9 +7,9 @@
             rotate: 0, //位置旋转角度
             isHide: false, //鼠标放在导航上是否隐藏其余导航
             trigger: 'click',
-            itemCallback: $.noop,
-            openCallback: $.noop,
-            closeCallback: $.noop
+            selector: $.noop,
+            open: $.noop,
+            close: $.noop
         };
 
         opts = $.extend({}, setting, opts);
@@ -34,17 +34,20 @@
                     if (opts.isHide) {
                         onItem(this);
                     }
-                    opts.itemCallback(this);
+                    opts.selector(this);
                 });
             } else {
                 $(this).mouseleave(function() {
-                    close();
+                    if (visible) {
+                        close();
+                    }
                 });
 
                 center.mouseenter(function() {
                     flag = false;
                     open();
                 });
+
 
                 item.hover(function() {
                     var that = this;
@@ -54,7 +57,7 @@
                             if (opts.isHide) {
                                 onItem(that);
                             }
-
+                            opts.selector(that);
                         }
                     }, 200);
                 }, function(evt) {
@@ -125,10 +128,10 @@
                         transform: 'scale(1)'
                     });
                 });
-                if (trigger) {
-                    visible = true;
-                }
-                opts.openCallback(visible);
+
+                visible = true;
+
+                opts.open(visible);
             }
 
             function close(not) {
@@ -158,15 +161,17 @@
                     if (flag) {
                         item.not(not).hide();
                         ring.hide();
+
+                        visible = false;
+
+                        if (!!!not) {
+                            opts.close(visible);
+                        }
                     }
                 }, 300);
 
-                if (trigger) {
-                    visible = false;
-                }
-                if (!!!not) {
-                    opts.closeCallback(visible);
-                }
+
+
             }
 
             function onItem(that) {

@@ -111,18 +111,18 @@
     <script src="./js/distributeNav.js"></script>
     <script>
         $('.approval').distributeNav({
-            item: '.btn',
-            center: '.center-btn',
-            ring: '.nav-ring',
-            rotate: 0,
-            trigger: 'click',
-            itemCallback: function(a) {
+            item: '.btn', //分散在周围的标签名字
+            center: '.center-btn', //中间开关按钮
+            ring: '.nav-ring', //环形修饰标签
+            rotate: 0, //旋转角度
+            trigger: 'click', //事件触发方式    click -- hover
+            selector: function(a) { // 选中导航触发
                 console.log(a)
             },
-            openCallback: function(visible) {
+            open: function(visible) { // 打开导航触发
                 console.log(visible)
             },
-            closeCallback: function(visible) {
+            close: function(visible) { //关闭导航触发
                 console.log(visible)
             }
         });
@@ -141,16 +141,7 @@
             center: '.center-btn',
             ring: '.nav-ring',
             rotate: 90,
-            isHide: true,
-            itemCallback: function(a) {
-                console.log(a)
-            },
-            openCallback: function(visible) {
-                console.log(visible)
-            },
-            closeCallback: function(visible) {
-                console.log(visible)
-            }
+            isHide: true
         })
     </script>
 </body>
